@@ -198,13 +198,13 @@ h1 {
 
 .glass-card,
 .plan-card {
-  background: var(--card);
-  border: 1px solid var(--line);
+  background: linear-gradient(155deg, #ffffff 0%, #f3f9ff 100%);
+  border: 1px solid rgba(59, 130, 246, 0.28);
   border-radius: 22px;
   padding: 18px;
-  backdrop-filter: blur(8px);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
 }
 
 .glass-card::before,
@@ -215,14 +215,14 @@ h1 {
   top: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, rgba(84, 242, 255, 0.75), transparent 70%);
+  background: linear-gradient(90deg, #0ea5e9, #2563eb 55%, transparent 88%);
 }
 
 h2 {
   font-size: 1.02rem;
   margin-bottom: 12px;
   letter-spacing: 0.02em;
-  color: #a9ebff;
+  color: #1d4ed8;
 }
 
 .glass-card ul {
@@ -234,7 +234,12 @@ h2 {
 .glass-card li,
 .check-grid p,
 .problem-card p,
-.plan-card p,
+.plan-card p {
+  color: #334155;
+  line-height: 1.45;
+  font-size: 0.92rem;
+}
+
 .post-footer p {
   color: var(--muted);
   line-height: 1.45;
@@ -257,7 +262,7 @@ h2 {
 }
 
 .problem-lead {
-  color: #dff7ff;
+  color: #0f172a;
   font-weight: 600;
 }
 
@@ -267,19 +272,19 @@ h2 {
 }
 
 .problem-type {
-  background: rgba(4, 19, 52, 0.68);
-  border: 1px solid rgba(134, 220, 255, 0.24);
+  background: #ffffff;
+  border: 1px solid rgba(59, 130, 246, 0.24);
   border-radius: 12px;
   padding: 10px 12px;
 }
 
 .problem-proof {
   padding: 11px 12px;
-  border-left: 3px solid rgba(123, 230, 255, 0.8);
-  background: rgba(3, 23, 58, 0.7);
+  border-left: 3px solid #2563eb;
+  background: #eff6ff;
   border-radius: 8px;
   font-style: italic;
-  color: #e8f8ff;
+  color: #1e3a8a;
 }
 
 .problem-flow {
@@ -288,7 +293,7 @@ h2 {
 }
 
 .problem-final {
-  color: #ffffff;
+  color: #0f172a;
   font-weight: 600;
 }
 
@@ -314,10 +319,10 @@ h2 {
 }
 
 .check-grid p {
-  border: 1px solid rgba(134, 220, 255, 0.24);
+  border: 1px solid rgba(59, 130, 246, 0.25);
   border-radius: 14px;
   padding: 10px;
-  background: rgba(4, 19, 52, 0.62);
+  background: #ffffff;
 }
 
 .check-grid p::first-letter {
@@ -327,6 +332,44 @@ h2 {
 .plans-grid {
   margin-top: 16px;
   grid-template-columns: 1fr 1fr;
+}
+
+.portfolio-example {
+  margin-top: 16px;
+}
+
+.portfolio-intro {
+  color: #334155;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.portfolio-points {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.portfolio-points p {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(59, 130, 246, 0.24);
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+}
+
+.cta-portfolio {
+  margin-top: 12px;
+  display: inline-flex;
+  color: #ffffff;
+  border-color: rgba(37, 99, 235, 0.45);
+  background: linear-gradient(120deg, #2563eb 0%, #0ea5e9 100%);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3);
+}
+
+.cta-portfolio:hover {
+  box-shadow: 0 14px 30px rgba(14, 165, 233, 0.35);
 }
 
 .invest-box {
@@ -341,27 +384,55 @@ h2 {
 
 .invest-controls label {
   font-size: 0.86rem;
-  color: #d7f4ff;
+  color: #1e3a8a;
   font-weight: 600;
 }
 
 .invest-controls select {
   width: 100%;
-  border: 1px solid rgba(145, 223, 255, 0.45);
-  background: rgba(4, 19, 52, 0.7);
-  color: #f3fbff;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  background: #ffffff;
+  color: #0f172a;
   border-radius: 10px;
   padding: 10px 12px;
   font-family: "Poppins", sans-serif;
   font-size: 0.92rem;
 }
 
+.plan-delivery {
+  margin-top: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(59, 130, 246, 0.24);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.plan-delivery h3 {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #1d4ed8;
+}
+
+.plan-delivery ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.plan-delivery li {
+  color: #334155;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 .invest-preview {
   margin-top: 12px;
-  background: rgba(3, 23, 58, 0.7);
-  border: 1px solid rgba(134, 220, 255, 0.24);
+  background: #eff6ff;
+  border: 1px solid rgba(59, 130, 246, 0.24);
   border-radius: 10px;
   padding: 10px 12px;
+  color: #1e3a8a;
 }
 
 .invest-actions {
@@ -372,31 +443,29 @@ h2 {
 }
 
 .plan-card h3 {
-  color: #cff6ff;
+  color: #1d4ed8;
   font-size: 1.08rem;
   margin-bottom: 8px;
 }
 
 .price {
-  color: #ffffff;
+  color: #0f172a;
   font-size: 1.85rem;
   font-weight: 800;
   margin-bottom: 8px;
 }
 
 .plan-card.featured {
-  border-color: rgba(118, 229, 255, 0.65);
-  box-shadow: 0 0 0 1px rgba(118, 229, 255, 0.32) inset;
-  background: linear-gradient(
-    140deg,
-    rgba(8, 31, 79, 0.95),
-    rgba(8, 17, 50, 0.78)
-  );
+  border-color: rgba(37, 99, 235, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.25) inset,
+    0 14px 30px rgba(37, 99, 235, 0.2);
+  background: linear-gradient(150deg, #ffffff 0%, #e8f2ff 100%);
 }
 
 .plan-tag {
   margin-top: 10px;
-  color: #dff8ff;
+  color: #1e40af;
   font-size: 0.78rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -465,6 +534,28 @@ h2 {
 
 .cta-linkedin:hover {
   box-shadow: 0 14px 30px rgba(29, 155, 240, 0.35);
+}
+
+.cta-invest-linkedin {
+  color: #ffffff;
+  border-color: rgba(10, 102, 194, 0.45);
+  background: linear-gradient(120deg, #0a66c2 0%, #0f75db 55%, #1d9bf0 100%);
+  box-shadow: 0 12px 26px rgba(10, 102, 194, 0.35);
+  animation: linkedinPulse 2.4s ease-in-out infinite;
+}
+
+.cta-invest-linkedin:hover {
+  box-shadow: 0 16px 34px rgba(29, 155, 240, 0.4);
+}
+
+@keyframes linkedinPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
 }
 
 .cta-mentoria-highlight {

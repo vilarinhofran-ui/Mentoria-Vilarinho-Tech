@@ -128,7 +128,7 @@
         <div class="grid-main plans-grid">
           <article class="plan-card">
             <h3>Plano Essencial</h3>
-            <p class="price">R$147</p>
+            <p class="price">R$197</p>
             <p>Atualizações e ajustes no LinkedIn</p>
             <p class="plan-tag">Entrada rápida para destravar visibilidade</p>
           </article>
@@ -143,30 +143,66 @@
           </article>
         </div>
 
+        <section
+          class="glass-card portfolio-example"
+          aria-label="Exemplo de portfolio"
+        >
+          <h2>Exemplo de Portfólio que será desenvolvido (Plano Pro)</h2>
+
+          <p class="portfolio-intro">
+            Para o cliente visualizar o nível da entrega, este é um modelo real
+            de portfólio com estrutura profissional, apresentação pessoal,
+            projetos, experiências e canais de contato.
+          </p>
+
+          <div class="portfolio-points">
+            <p>✔ Página inicial com posicionamento profissional</p>
+            <p>✔ Sessões de competências, projetos e experiência</p>
+            <p>✔ Visual moderno com identidade e credibilidade</p>
+          </div>
+
+          <a
+            class="cta cta-portfolio"
+            href="https://vilarinhofran-ui.github.io/PORTF-LIO-FRANCIELLY-VILARINHO/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Visualizar exemplo de Portfólio Pro</a
+          >
+        </section>
+
         <section class="glass-card invest-box" aria-label="Escolha de plano">
           <h2>Escolha seu plano e clique em Investir</h2>
 
           <div class="invest-controls">
             <label for="plan-select">Plano</label>
             <select id="plan-select" name="plano">
-              <option value="essencial">Plano Essencial - R$147</option>
+              <option value="essencial">Plano Essencial - R$197</option>
               <option value="pro">Plano Pro - R$497</option>
             </select>
           </div>
 
+          <div class="plan-delivery" id="plan-delivery-box">
+            <h3>O que será entregue neste plano</h3>
+            <ul id="plan-delivery-list">
+              <li>Otimização completa do perfil LinkedIn</li>
+              <li>Headline estratégica e seção Sobre reescrita</li>
+              <li>Organização de experiências e palavras-chave</li>
+            </ul>
+          </div>
+
           <p class="invest-preview" id="invest-preview">
-            Mensagem: Ola! Quero investir no Plano Essencial (R$147) do LinkedIn
+            Mensagem: Olá! Quero investir no Plano Essencial (R$197) do LinkedIn
             Pro Visibility. Pode me enviar o link de pagamento, por favor?
           </p>
 
           <div class="invest-actions">
             <a
               id="invest-linkedin"
-              class="cta cta-secondary"
-              href="https://www.linkedin.com/messaging/compose/"
+              class="cta cta-invest-linkedin"
+              href="https://www.linkedin.com/in/francielly-vilarinho/"
               target="_blank"
               rel="noopener noreferrer"
-              >Investir pelo LinkedIn (Redirecionamento DM privado)</a
+              >Investir pelo LinkedIn (abrir perfil)</a
             >
 
             <a
@@ -193,13 +229,6 @@
               href="mentoria.index.html"
               >Conheça também: Mentoria na Prática - Vilarinho Tech</a
             >
-            <a
-              class="cta cta-linkedin"
-              href="https://www.linkedin.com/in/francielly-vilarinho/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Publicar no LinkedIn</a
-            >
           </div>
         </footer>
       </section>
@@ -211,15 +240,35 @@
         var preview = document.getElementById("invest-preview");
         var whatsappBtn = document.getElementById("invest-whatsapp");
         var linkedinBtn = document.getElementById("invest-linkedin");
+        var deliveryList = document.getElementById("plan-delivery-list");
 
-        if (!planSelect || !preview || !whatsappBtn || !linkedinBtn) {
+        if (
+          !planSelect ||
+          !preview ||
+          !whatsappBtn ||
+          !linkedinBtn ||
+          !deliveryList
+        ) {
           return;
         }
+
+        var deliveryMap = {
+          essencial: [
+            "Otimização completa do perfil LinkedIn",
+            "Headline estratégica e seção Sobre reescrita",
+            "Organização de experiências e palavras-chave",
+          ],
+          pro: [
+            "Tudo do Plano Essencial",
+            "Otimização avançada da seção de destaque",
+            "Portfolio Personalizado Pro para reforçar posicionamento",
+          ],
+        };
 
         function planLabel(value) {
           return value === "pro"
             ? "Plano Pro (R$497)"
-            : "Plano Essencial (R$147)";
+            : "Plano Essencial (R$197)";
         }
 
         function buildMessage(label) {
@@ -234,11 +283,19 @@
           var selectedPlan = planLabel(planSelect.value);
           var message = buildMessage(selectedPlan);
           var encoded = encodeURIComponent(message);
+          var items = deliveryMap[planSelect.value] || [];
 
           preview.textContent = "Mensagem: " + message;
           whatsappBtn.href = "https://wa.me/554187039711?text=" + encoded;
           linkedinBtn.href =
-            "https://www.linkedin.com/messaging/compose/?body=" + encoded;
+            "https://www.linkedin.com/in/francielly-vilarinho/";
+
+          deliveryList.innerHTML = "";
+          items.forEach(function (item) {
+            var li = document.createElement("li");
+            li.textContent = item;
+            deliveryList.appendChild(li);
+          });
         }
 
         planSelect.addEventListener("change", updateLinks);
