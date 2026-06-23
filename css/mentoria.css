@@ -19,7 +19,7 @@ body {
 .bg-icons {
   position: fixed;
   inset: 0;
-  z-index: 5;
+  z-index: 0;
   pointer-events: none;
   overflow: hidden;
 }
@@ -34,25 +34,7 @@ body {
 }
 
 .bg-icons span:nth-child(1) {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 62px;
-  height: 62px;
-  background: linear-gradient(145deg, #0a66c2 0%, #1d9bf0 100%);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  color: #ffffff;
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-size: 2rem;
-  letter-spacing: -0.04em;
-  text-transform: lowercase;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  box-shadow:
-    0 10px 28px rgba(10, 102, 194, 0.42),
-    0 0 36px rgba(29, 155, 240, 0.34);
-  animation: iconOrbitPulseLight 6.8s cubic-bezier(0.42, 0, 0.25, 1) infinite;
+  display: none;
 }
 
 .bg-icons span:nth-child(n + 2) {
@@ -60,10 +42,8 @@ body {
 }
 
 .bg-icons span:nth-child(1) {
-  left: auto;
-  right: 14px;
-  top: 14px;
-  animation-duration: 7s;
+  left: -9999px;
+  top: -9999px;
 }
 
 .bg-icons span:nth-child(2) {
@@ -209,8 +189,16 @@ body {
 }
 
 .logo-mentoria {
-  max-width: 280px;
+  max-width: 300px;
+  width: 100%;
   margin-bottom: 25px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #ffffff 0%, #ecf5ff 100%);
+  padding: 14px;
+  border: 1px solid rgba(148, 206, 255, 0.45);
+  box-shadow:
+    0 16px 34px rgba(30, 58, 138, 0.2),
+    0 0 0 3px rgba(56, 189, 248, 0.16);
 }
 
 .mentoria h1 {
@@ -594,10 +582,6 @@ body {
   }
 
   .bg-icons span:nth-child(1) {
-    width: 48px;
-    height: 48px;
-    font-size: 1.55rem !important;
-    right: 10px;
-    top: 10px;
+    display: none;
   }
 }
