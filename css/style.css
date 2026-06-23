@@ -62,79 +62,91 @@ body::before {
 .bg-icons {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   overflow: hidden;
 }
 
 .bg-icons span {
   position: absolute;
-  color: rgba(182, 236, 255, 0.16);
+  color: rgba(182, 236, 255, 0.06);
   font-weight: 700;
   letter-spacing: 0.03em;
-  text-shadow: 0 0 16px rgba(0, 212, 255, 0.18);
-  animation: floatIcon 16s ease-in-out infinite;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.08);
+  animation: floatIcon 20s ease-in-out infinite;
 }
 
 .bg-icons span:nth-child(1) {
-  left: 7%;
-  top: 14%;
-  font-size: 2.1rem;
-  animation-duration: 14s;
+  color: rgba(215, 248, 255, 0.96);
+  text-shadow:
+    0 0 30px rgba(0, 212, 255, 0.75),
+    0 0 54px rgba(0, 114, 255, 0.45);
+  animation: floatIconFocus 7s ease-in-out infinite;
+}
+
+.bg-icons span:nth-child(n + 2) {
+  opacity: 0.1;
+}
+
+.bg-icons span:nth-child(1) {
+  left: 90%;
+  top: 2%;
+  font-size: 3.8rem;
+  animation-duration: 7s;
 }
 
 .bg-icons span:nth-child(2) {
-  left: 20%;
-  top: 68%;
-  font-size: 1.9rem;
-  animation-duration: 17s;
+  left: 74%;
+  top: 2%;
+  font-size: 2.4rem;
+  animation-duration: 8s;
   animation-delay: -2s;
 }
 
 .bg-icons span:nth-child(3) {
-  left: 33%;
-  top: 22%;
-  font-size: 1.7rem;
-  animation-duration: 13s;
+  left: 90%;
+  top: 16%;
+  font-size: 2.2rem;
+  animation-duration: 9s;
   animation-delay: -5s;
 }
 
 .bg-icons span:nth-child(4) {
-  left: 52%;
+  left: 12%;
   top: 74%;
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   animation-duration: 18s;
   animation-delay: -3s;
 }
 
 .bg-icons span:nth-child(5) {
-  left: 66%;
-  top: 18%;
-  font-size: 1.9rem;
+  left: 30%;
+  top: 20%;
+  font-size: 1.4rem;
   animation-duration: 15s;
   animation-delay: -7s;
 }
 
 .bg-icons span:nth-child(6) {
-  left: 78%;
+  left: 10%;
   top: 58%;
-  font-size: 1.8rem;
+  font-size: 1.35rem;
   animation-duration: 16s;
   animation-delay: -4s;
 }
 
 .bg-icons span:nth-child(7) {
-  left: 86%;
-  top: 28%;
-  font-size: 2rem;
+  left: 52%;
+  top: 12%;
+  font-size: 1.4rem;
   animation-duration: 12s;
   animation-delay: -6s;
 }
 
 .bg-icons span:nth-child(8) {
-  left: 44%;
-  top: 8%;
-  font-size: 1.7rem;
+  left: 22%;
+  top: 82%;
+  font-size: 1.4rem;
   animation-duration: 19s;
   animation-delay: -1s;
 }
@@ -152,16 +164,30 @@ body::before {
   0%,
   100% {
     transform: translateY(0) rotate(0deg);
-    opacity: 0.35;
+    opacity: 0.28;
   }
   50% {
-    transform: translateY(-20px) rotate(6deg);
-    opacity: 0.8;
+    transform: translateY(-16px) rotate(4deg);
+    opacity: 0.62;
+  }
+}
+
+@keyframes floatIconFocus {
+  0%,
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0.72;
+  }
+  50% {
+    transform: translateY(-24px) scale(1.09) rotate(7deg);
+    opacity: 1;
   }
 }
 
 .page-wrap {
   min-height: 100dvh;
+  position: relative;
+  z-index: 1;
   display: grid;
   place-items: center;
   padding: 28px;
@@ -224,9 +250,35 @@ h1 {
   line-height: 1.05;
   letter-spacing: -0.02em;
   background: linear-gradient(90deg, #dcf6ff 0%, #8ddcff 45%, #5ab2ff 100%);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation:
+    titleGlowShift 5s ease-in-out infinite,
+    titleFloat 3.2s ease-in-out infinite;
+}
+
+@keyframes titleGlowShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 0 rgba(0, 212, 255, 0));
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.45));
+  }
+}
+
+@keyframes titleFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
 }
 
 .hero-subtitle {
@@ -740,5 +792,11 @@ h2 {
 
   .bg-icons span {
     font-size: 1.2rem !important;
+  }
+
+  .bg-icons span:nth-child(1) {
+    font-size: 2.2rem !important;
+    left: 86%;
+    top: 4%;
   }
 }

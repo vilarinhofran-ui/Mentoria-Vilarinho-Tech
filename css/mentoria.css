@@ -26,72 +26,84 @@ body {
 
 .bg-icons span {
   position: absolute;
-  color: rgba(37, 99, 235, 0.16);
+  color: rgba(37, 99, 235, 0.06);
   font-weight: 700;
   letter-spacing: 0.03em;
-  text-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
-  animation: floatIconLight 15s ease-in-out infinite;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.1);
+  animation: floatIconLight 19s ease-in-out infinite;
 }
 
 .bg-icons span:nth-child(1) {
-  left: 7%;
-  top: 14%;
-  font-size: 2rem;
-  animation-duration: 13s;
+  color: rgba(37, 99, 235, 0.68);
+  text-shadow:
+    0 0 26px rgba(56, 189, 248, 0.42),
+    0 0 38px rgba(37, 99, 235, 0.32);
+  animation: floatIconFocusLight 7.5s ease-in-out infinite;
+}
+
+.bg-icons span:nth-child(n + 2) {
+  opacity: 0.1;
+}
+
+.bg-icons span:nth-child(1) {
+  left: 82%;
+  top: 6%;
+  font-size: 3rem;
+  animation-duration: 7s;
 }
 
 .bg-icons span:nth-child(2) {
-  left: 19%;
-  top: 68%;
-  font-size: 1.8rem;
-  animation-duration: 16s;
+  left: 74%;
+  top: 2%;
+  font-size: 2.3rem;
+  animation-duration: 8s;
   animation-delay: -3s;
 }
 
 .bg-icons span:nth-child(3) {
-  left: 34%;
-  top: 24%;
-  font-size: 1.7rem;
-  animation-duration: 12s;
+  left: 90%;
+  top: 16%;
+  font-size: 2.1rem;
+  animation-duration: 9s;
   animation-delay: -5s;
 }
 
 .bg-icons span:nth-child(4) {
-  left: 49%;
+  left: 12%;
   top: 76%;
-  font-size: 1.7rem;
+  font-size: 1.35rem;
   animation-duration: 18s;
   animation-delay: -1s;
 }
 
 .bg-icons span:nth-child(5) {
-  left: 64%;
-  top: 16%;
-  font-size: 1.9rem;
+  left: 52%;
+  top: 12%;
+  font-size: 1.3rem;
   animation-duration: 14s;
   animation-delay: -6s;
 }
 
 .bg-icons span:nth-child(6) {
-  left: 78%;
+  left: 10%;
   top: 58%;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   animation-duration: 17s;
   animation-delay: -2s;
 }
 
 .bg-icons span:nth-child(7) {
-  left: 86%;
-  top: 30%;
-  font-size: 1.9rem;
+  left: 32%;
+  top: 22%;
+  font-size: 1.35rem;
   animation-duration: 15s;
   animation-delay: -7s;
 }
 
 .bg-icons span:nth-child(8) {
-  left: 44%;
-  top: 8%;
-  font-size: 1.7rem;
+  left: 22%;
+  top: 82%;
+  font-size: 1.35rem;
   animation-duration: 19s;
   animation-delay: -4s;
 }
@@ -100,19 +112,31 @@ body {
   0%,
   100% {
     transform: translateY(0) rotate(0deg);
-    opacity: 0.34;
+    opacity: 0.26;
   }
   50% {
-    transform: translateY(-18px) rotate(5deg);
-    opacity: 0.78;
+    transform: translateY(-14px) rotate(4deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes floatIconFocusLight {
+  0%,
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0.68;
+  }
+  50% {
+    transform: translateY(-22px) scale(1.08) rotate(6deg);
+    opacity: 0.98;
   }
 }
 
 .btn-back {
   position: fixed;
-  top: 18px;
+  top: calc(14px + env(safe-area-inset-top));
   left: 18px;
-  z-index: 50;
+  z-index: 120;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 700;
@@ -126,8 +150,7 @@ body {
     box-shadow 0.2s ease;
 }
 
-.mentoria,
-.btn-back {
+.mentoria {
   position: relative;
   z-index: 1;
 }
@@ -481,7 +504,7 @@ body {
 
 @media (max-width: 576px) {
   .btn-back {
-    top: 10px;
+    top: calc(10px + env(safe-area-inset-top));
     left: 10px;
     font-size: 0.82rem;
     padding: 8px 12px;
@@ -534,5 +557,9 @@ body {
 
   .bg-icons span {
     font-size: 1.1rem !important;
+  }
+
+  .bg-icons span:nth-child(1) {
+    font-size: 1.8rem !important;
   }
 }
