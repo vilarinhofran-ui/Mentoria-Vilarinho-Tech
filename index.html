@@ -17,7 +17,7 @@
     />
     <meta
       property="og:description"
-      content="Seu LinkedIn nao precisa ser ativo. Precisa ser estrategico."
+      content="Seu LinkedIn não precisa ser ativo. Precisa ser estratégico."
     />
 
     <meta property="og:type" content="website" />
@@ -33,6 +33,17 @@
   </head>
 
   <body>
+    <div class="bg-icons" aria-hidden="true">
+      <span>💼</span>
+      <span>📈</span>
+      <span>🎯</span>
+      <span>🤝</span>
+      <span>🧭</span>
+      <span>🔎</span>
+      <span>in</span>
+      <span>🌐</span>
+    </div>
+
     <main class="page-wrap">
       <section class="post-canvas" aria-label="Post para LinkedIn">
         <header class="hero-row">
@@ -41,7 +52,7 @@
             <h1>LinkedIn Pro Visibility</h1>
             <p class="hero-subtitle">
               Seu LinkedIn não precisa ser ativo todos os dias. Precisa ser
-              estrategico.
+              estratégico.
             </p>
 
             <div class="hero-kpis" aria-label="Pontos-chave do produto">
@@ -137,15 +148,16 @@
             <h3>Plano Pro</h3>
             <p class="price">R$497</p>
             <p>
-              Atualizações e ajustes no LinkedIn + Portfolio Personalizado Pro
+              Atualizações e ajustes no LinkedIn + Portfólio Personalizado Pro
             </p>
+            <p>Pagamento: à vista ou até 2x de R$248,50</p>
             <p class="plan-tag">Posicionamento completo para oportunidades</p>
           </article>
         </div>
 
         <section
           class="glass-card portfolio-example"
-          aria-label="Exemplo de portfolio"
+          aria-label="Exemplo de portfólio"
         >
           <h2>Exemplo de Portfólio que será desenvolvido (Plano Pro)</h2>
 
@@ -176,8 +188,9 @@
           <div class="invest-controls">
             <label for="plan-select">Plano</label>
             <select id="plan-select" name="plano">
-              <option value="essencial">Plano Essencial - R$197</option>
-              <option value="pro">Plano Pro - R$497</option>
+              <option value="essencial">Plano Essencial - à vista R$197</option>
+              <option value="pro_avista">Plano Pro - à vista R$497</option>
+              <option value="pro_2x">Plano Pro - até 2x de R$248,50</option>
             </select>
           </div>
 
@@ -202,8 +215,12 @@
               href="https://www.linkedin.com/in/francielly-vilarinho/"
               target="_blank"
               rel="noopener noreferrer"
-              >Investir pelo LinkedIn (abrir perfil)</a
             >
+              Investir pelo LinkedIn
+              <span class="cta-subinfo"
+                >Você será redirecionado para LinkedIn</span
+              >
+            </a>
 
             <a
               id="invest-whatsapp"
@@ -211,8 +228,12 @@
               href="https://wa.me/554187039711"
               target="_blank"
               rel="noopener noreferrer"
-              >Investir pelo WhatsApp</a
             >
+              Investir pelo WhatsApp
+              <span class="cta-subinfo"
+                >Você será redirecionado para WhatsApp</span
+              >
+            </a>
           </div>
         </section>
 
@@ -258,22 +279,33 @@
             "Headline estratégica e seção Sobre reescrita",
             "Organização de experiências e palavras-chave",
           ],
-          pro: [
+          pro_avista: [
             "Tudo do Plano Essencial",
             "Otimização avançada da seção de destaque",
-            "Portfolio Personalizado Pro para reforçar posicionamento",
+            "Portfólio Personalizado Pro para reforçar posicionamento",
+          ],
+          pro_2x: [
+            "Tudo do Plano Essencial",
+            "Otimização avançada da seção de destaque",
+            "Portfólio Personalizado Pro para reforçar posicionamento",
           ],
         };
 
         function planLabel(value) {
-          return value === "pro"
-            ? "Plano Pro (R$497)"
-            : "Plano Essencial (R$197)";
+          if (value === "pro_avista") {
+            return "Plano Pro à vista (R$497)";
+          }
+
+          if (value === "pro_2x") {
+            return "Plano Pro em até 2x de R$248,50";
+          }
+
+          return "Plano Essencial à vista (R$197)";
         }
 
         function buildMessage(label) {
           return (
-            "Ola! Quero investir no " +
+            "Olá! Quero investir no " +
             label +
             " do LinkedIn Pro Visibility. Pode me enviar o link de pagamento, por favor?"
           );

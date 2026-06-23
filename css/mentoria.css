@@ -16,6 +16,98 @@ body {
   line-height: 1.6;
 }
 
+.bg-icons {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-icons span {
+  position: absolute;
+  color: rgba(37, 99, 235, 0.16);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+  animation: floatIconLight 15s ease-in-out infinite;
+}
+
+.bg-icons span:nth-child(1) {
+  left: 7%;
+  top: 14%;
+  font-size: 2rem;
+  animation-duration: 13s;
+}
+
+.bg-icons span:nth-child(2) {
+  left: 19%;
+  top: 68%;
+  font-size: 1.8rem;
+  animation-duration: 16s;
+  animation-delay: -3s;
+}
+
+.bg-icons span:nth-child(3) {
+  left: 34%;
+  top: 24%;
+  font-size: 1.7rem;
+  animation-duration: 12s;
+  animation-delay: -5s;
+}
+
+.bg-icons span:nth-child(4) {
+  left: 49%;
+  top: 76%;
+  font-size: 1.7rem;
+  animation-duration: 18s;
+  animation-delay: -1s;
+}
+
+.bg-icons span:nth-child(5) {
+  left: 64%;
+  top: 16%;
+  font-size: 1.9rem;
+  animation-duration: 14s;
+  animation-delay: -6s;
+}
+
+.bg-icons span:nth-child(6) {
+  left: 78%;
+  top: 58%;
+  font-size: 1.8rem;
+  animation-duration: 17s;
+  animation-delay: -2s;
+}
+
+.bg-icons span:nth-child(7) {
+  left: 86%;
+  top: 30%;
+  font-size: 1.9rem;
+  animation-duration: 15s;
+  animation-delay: -7s;
+}
+
+.bg-icons span:nth-child(8) {
+  left: 44%;
+  top: 8%;
+  font-size: 1.7rem;
+  animation-duration: 19s;
+  animation-delay: -4s;
+}
+
+@keyframes floatIconLight {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.34;
+  }
+  50% {
+    transform: translateY(-18px) rotate(5deg);
+    opacity: 0.78;
+  }
+}
+
 .btn-back {
   position: fixed;
   top: 18px;
@@ -32,6 +124,12 @@ body {
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
+}
+
+.mentoria,
+.btn-back {
+  position: relative;
+  z-index: 1;
 }
 
 .btn-back:hover {
@@ -306,6 +404,7 @@ body {
 
 .btn-invest {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -316,6 +415,14 @@ body {
   background: linear-gradient(135deg, #25d366, #128c7e);
   border: 1px solid transparent;
   transition: 0.3s ease;
+}
+
+.invest-subinfo {
+  margin-top: 4px;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  font-weight: 500;
+  opacity: 0.92;
 }
 
 .btn-invest:hover {
@@ -423,5 +530,9 @@ body {
 
   .cta-final h2 {
     font-size: 2rem;
+  }
+
+  .bg-icons span {
+    font-size: 1.1rem !important;
   }
 }

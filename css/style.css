@@ -59,12 +59,104 @@ body::before {
   animation: gridMove 20s linear infinite;
 }
 
+.bg-icons {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-icons span {
+  position: absolute;
+  color: rgba(182, 236, 255, 0.16);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-shadow: 0 0 16px rgba(0, 212, 255, 0.18);
+  animation: floatIcon 16s ease-in-out infinite;
+}
+
+.bg-icons span:nth-child(1) {
+  left: 7%;
+  top: 14%;
+  font-size: 2.1rem;
+  animation-duration: 14s;
+}
+
+.bg-icons span:nth-child(2) {
+  left: 20%;
+  top: 68%;
+  font-size: 1.9rem;
+  animation-duration: 17s;
+  animation-delay: -2s;
+}
+
+.bg-icons span:nth-child(3) {
+  left: 33%;
+  top: 22%;
+  font-size: 1.7rem;
+  animation-duration: 13s;
+  animation-delay: -5s;
+}
+
+.bg-icons span:nth-child(4) {
+  left: 52%;
+  top: 74%;
+  font-size: 1.6rem;
+  animation-duration: 18s;
+  animation-delay: -3s;
+}
+
+.bg-icons span:nth-child(5) {
+  left: 66%;
+  top: 18%;
+  font-size: 1.9rem;
+  animation-duration: 15s;
+  animation-delay: -7s;
+}
+
+.bg-icons span:nth-child(6) {
+  left: 78%;
+  top: 58%;
+  font-size: 1.8rem;
+  animation-duration: 16s;
+  animation-delay: -4s;
+}
+
+.bg-icons span:nth-child(7) {
+  left: 86%;
+  top: 28%;
+  font-size: 2rem;
+  animation-duration: 12s;
+  animation-delay: -6s;
+}
+
+.bg-icons span:nth-child(8) {
+  left: 44%;
+  top: 8%;
+  font-size: 1.7rem;
+  animation-duration: 19s;
+  animation-delay: -1s;
+}
+
 @keyframes gridMove {
   from {
     transform: translateY(0);
   }
   to {
     transform: translateY(46px);
+  }
+}
+
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(-20px) rotate(6deg);
+    opacity: 0.8;
   }
 }
 
@@ -510,6 +602,16 @@ h2 {
     box-shadow 0.3s ease;
 }
 
+.cta-subinfo {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: normal;
+  opacity: 0.92;
+}
+
 .cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(76, 180, 255, 0.35);
@@ -634,5 +736,9 @@ h2 {
   .cta {
     width: 100%;
     text-align: center;
+  }
+
+  .bg-icons span {
+    font-size: 1.2rem !important;
   }
 }
