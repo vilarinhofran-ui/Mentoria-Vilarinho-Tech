@@ -1,0 +1,427 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+.btn-back {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 50;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  border-radius: 999px;
+  padding: 10px 16px;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.28);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(37, 99, 235, 0.35);
+}
+
+.mentoria {
+  padding: 80px 8%;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.mentoria-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.logo-mentoria {
+  max-width: 280px;
+  margin-bottom: 25px;
+}
+
+.mentoria h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #111827;
+}
+
+.mentoria h1 span {
+  display: block;
+  color: #2563eb;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: #4b5563;
+}
+
+.subtitle strong {
+  color: #2563eb;
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.beneficio {
+  background: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+}
+
+.beneficio:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+.beneficio h4 {
+  margin: 12px 0;
+  font-size: 1rem;
+}
+
+.beneficio p {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.pricing-card {
+  background: #fff;
+  border-radius: 25px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+}
+
+.badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.pricing-card h3 {
+  margin-top: 25px;
+  color: #2563eb;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pricing-card h2 {
+  font-size: 4rem;
+  color: #111827;
+  margin: 15px 0;
+  font-weight: 800;
+}
+
+.avista {
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.parcelado {
+  margin: 25px 0;
+  color: #4b5563;
+}
+
+.btn-whatsapp {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  transition: 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.35);
+}
+
+.cards-section {
+  max-width: 1200px;
+  margin: 70px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  padding: 35px;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  color: #2563eb;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.card ul {
+  list-style: none;
+}
+
+.card li {
+  padding: 12px 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.card li:last-child {
+  border: none;
+}
+
+.cta-final {
+  max-width: 1200px;
+  margin: 70px auto 0;
+  background: #fff;
+  padding: 60px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cta-final h2 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.cta-final p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #6b7280;
+}
+
+.invest-box {
+  max-width: 1200px;
+  margin: 30px auto 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 25px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.invest-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+.invest-controls {
+  display: grid;
+  gap: 8px;
+  max-width: 420px;
+}
+
+.invest-controls label {
+  font-size: 0.9rem;
+  color: #374151;
+  font-weight: 600;
+}
+
+.invest-controls select {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1f2937;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+}
+
+.invest-preview {
+  margin-top: 14px;
+  background: #f8fafc;
+  border: 1px solid #dbe7f4;
+  border-radius: 10px;
+  padding: 12px;
+  color: #475569;
+}
+
+.invest-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-invest {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+}
+
+.btn-invest:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.25);
+}
+
+.btn-invest-secondary {
+  color: #2563eb;
+  background: #eef4ff;
+  border-color: #bfdbfe;
+}
+
+.btn-invest-secondary:hover {
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.2);
+}
+
+.card,
+.beneficio,
+.pricing-card {
+  animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .mentoria-container {
+    grid-template-columns: 1fr;
+  }
+
+  .beneficios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-section {
+    grid-template-columns: 1fr;
+  }
+
+  .mentoria h1 {
+    font-size: 3rem;
+  }
+
+  .pricing-card h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-back {
+    top: 10px;
+    left: 10px;
+    font-size: 0.82rem;
+    padding: 8px 12px;
+  }
+
+  .mentoria {
+    padding: 60px 20px;
+  }
+
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mentoria h1 {
+    font-size: 2.3rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .cta-final {
+    padding: 35px 25px;
+  }
+
+  .invest-box {
+    margin-top: 20px;
+    padding: 24px 18px;
+  }
+
+  .invest-box h2 {
+    font-size: 1.4rem;
+  }
+
+  .invest-controls {
+    max-width: 100%;
+  }
+
+  .invest-actions {
+    width: 100%;
+  }
+
+  .btn-invest {
+    width: 100%;
+  }
+
+  .cta-final h2 {
+    font-size: 2rem;
+  }
+}
